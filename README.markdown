@@ -1,6 +1,8 @@
 `yst` - static websites from YAML and string templates
 ======================================================
 
+[![Build Status](https://travis-ci.com/jeffagit-anto/yst.svg?branch=master)](https://travis-ci.com/jeffagit-anto/yst)
+
 `yst` is a tool for generating a static website by filling [string
 template][]s with data taken from [YAML][] or [CSV][] text files or
 [SQLite3][] file based databases. This approach
