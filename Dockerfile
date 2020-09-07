@@ -2,7 +2,7 @@ FROM haskell:8
 
 WORKDIR /opt/yst
 
-RUN cabal update
+RUN stack update
 
 # Add just the .cabal file to capture dependencies
 COPY ./cabal.project $WORKDIR
