@@ -1,9 +1,6 @@
-allow-newer: true
 
-packages:
+
 - '.'
-
-extra-deps:
 - Glob-0.10.1@sha256:424bf82768d0471562b34ffcac6b73e658f655aac957dfbcbb945603899a40fd,2996
 - HDBC-2.4.0.3@sha256:99d3de808f53271afb0a8c31adfc99c7ef94f28355aba58bb0c9dffd4376296f,2998
 - HDBC-sqlite3-2.3.3.1@sha256:5025fd94d02b9b3f0b8b8233796dd9a85a0b3dda6503c6e671e3eddbc51cb4d4,2424
@@ -121,5 +118,6 @@ extra-deps:
 - yaml-0.11.5.0@sha256:499783456cb70964b6ff29e310d1785829e57eb872ec143a9a81da0edb69cb61,5109
 - zip-archive-0.4.1@sha256:51774bdc747d20b8f23172315f9c3fdd6c11de01607e98e9890eb87fb49566d7,4055
 - zlib-0.6.2.2@sha256:eae95cb0cc80ff259de236b812072c4a74c6de398cb277ff0fba1148edc0253d,4809
-
+extra-deps:
+packages:
 resolver: ghc-8.8.4
