@@ -7,6 +7,7 @@ RUN stack update
 # Add just the .cabal file to capture dependencies
 COPY ./cabal.project $WORKDIR
 COPY ./yst.cabal     $WORKDIR
+COPY ./stack.yaml     $WORKDIR
 
 # Docker will cache this command as a layer, freeing us up to
 # modify source code without re-installing dependencies
