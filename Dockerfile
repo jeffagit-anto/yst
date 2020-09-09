@@ -19,6 +19,9 @@ RUN stack --resolver ghc-8.8.4 --no-terminal $ARGS test --only-dependencies --fa
 # Add and Install Application Code
 COPY . $WORKDIR
 RUN ulimit -n 4096
-RUN stack  --resolver ghc-8.8.4 --no-terminal $ARGS test --haddock --no-haddock-deps --ghc-options="-O0 -Wall -fno-warn-unused-do-bind"
+RUN stack  --resolver ghc-8.8.4 --no-terminal --local-bin-path $WORKDIR/bin \
+           $ARGS test --haddock --no-haddock-deps --ghc-options="-O0 -Wall -fno-warn-unused-do-bind"
+
+ENV PATH="/opt/yst/bin:${PATH}"
 
 CMD ["yst"]
