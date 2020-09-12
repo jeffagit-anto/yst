@@ -1,3 +1,6 @@
+# image build example: docker -D build  --tag docker-yst:8.8.4 .
+# image run example: run --rm docker-yst:8.8.4
+
 FROM haskell:8.8.4
 
 WORKDIR /opt/yst
