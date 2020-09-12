@@ -22,6 +22,6 @@ RUN ulimit -n 4096
 RUN stack  --resolver ghc-8.8.4 --no-terminal --local-bin-path $WORKDIR/bin \
            $ARGS test --haddock --no-haddock-deps --ghc-options="-O0 -Wall -fno-warn-unused-do-bind"
 
-ENV PATH="/opt/yst/bin:${PATH}"
+# ENV PATH="/opt/yst/bin:${PATH}"
 
-CMD ["yst"]
+CMD ["stack", "exec", "yst"]
