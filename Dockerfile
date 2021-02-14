@@ -7,7 +7,7 @@ ARG  GCC_VERSION=8.8.4
 FROM haskell:$GCC_VERSION
 
 # recall ARG GCC_VERSION without a value permits to use it inside the build stages
-ARG  GCC_VERSION
+ENV GCC_VERSION=$GCC_VERSION
 
 WORKDIR /opt/yst
 
