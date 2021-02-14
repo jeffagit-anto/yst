@@ -1,3 +1,5 @@
+resolver: defined-with-stack-build-cli-option
+
 allow-newer: true
 
 packages:
