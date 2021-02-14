@@ -1,5 +1,3 @@
-resolver: ghc-8.8.4
-
 allow-newer: true
 
 packages:
