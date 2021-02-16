@@ -42,9 +42,3 @@ RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8  
 ENV LANGUAGE en_US:en  
 ENV LC_ALL en_US.UTF-8  
-
-RUN stack --resolver ghc-$GCC_VERSION --no-terminal install ghcid --stack-yaml ghcid-stack.yaml
-
-RUN stack --resolver ghc-$GCC_VERSION --no-terminal install hlint --stack-yaml hlint-stack.yaml
-
-CMD ["stack", "exec", "ghcid"]

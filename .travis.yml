@@ -3,11 +3,11 @@ language: shell
 services:
  - docker
 
-before_install:
- - docker -D build  --tag antojf/yst:latest . 
-
-deploy:
-  provider: script
-  script: bash docker_push
-  on:
-    branch: master
+jobs:
+  include:
+    -stage "build & push core Docker image"
+    docker -D build  --tag antojf/yst:latest . 
+    script: bash docker_push yst
+    -stage "build & push dev Docker image"
+    docker -D build  -f Dockerfile-dev --tag antojf/yst-dev:latest . 
+    script: bash docker_push yst-dev
