@@ -2,7 +2,7 @@
 # image run example:   docker run --rm docker-yst:$GHC_VERSION
 # TODO add some ghcid use case
 
-ARG  GHC_VERSION=yst
+ARG  GHC_VERSION=8.8.4
 ARG  REPO=yst
 
 FROM antojf/$REPO:latest
