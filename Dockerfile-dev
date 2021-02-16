@@ -9,10 +9,12 @@ FROM antojf/$REPO:latest
 
 RUN ulimit -n 8192
 
-# recall ARG GHC_VERSION without a value permits to use it inside the build stages
-ARG  GHC_VERSION
-
+# recall ARG <ENV_VAR-NAME> without a value permits to use it inside the build stages
+ARG GHC_VERSION
 ENV GHC_VERSION=$GHC_VERSION
+
+ARG REPO
+ENV REPO=$REPO
 
 WORKDIR /opt/$REPO
 
