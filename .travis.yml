@@ -1,15 +1,13 @@
 language: shell
-
 services:
- - docker
-
+  - docker
 jobs:
   include:
-    - stage: "build & push core Docker image"
-    script:
-      - docker -D build  --tag antojf/yst:latest . 
-      - bash docker_push yst
-    - stage: "build & push dev Docker image"
-    script:
-      - docker -D build  -f Dockerfile-dev --tag antojf/yst-dev:latest . 
-      - bash docker_push yst-dev
+    - stage: build & push core Docker image
+      script:
+        - 'docker -D build  --tag antojf/yst:latest .'
+        - bash docker_push yst
+    - stage: build & push dev Docker image
+      script:
+        - 'docker -D build  -f Dockerfile-dev --tag antojf/yst-dev:latest .'
+        - bash docker_push yst-dev
