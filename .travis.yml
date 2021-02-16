@@ -5,9 +5,9 @@ services:
 
 jobs:
   include:
-    -stage "build & push core Docker image"
+    -stage: "build & push core Docker image"
     docker -D build  --tag antojf/yst:latest . 
     script: bash docker_push yst
-    -stage "build & push dev Docker image"
+    -stage: "build & push dev Docker image"
     docker -D build  -f Dockerfile-dev --tag antojf/yst-dev:latest . 
     script: bash docker_push yst-dev
