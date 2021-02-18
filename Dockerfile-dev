@@ -16,19 +16,10 @@ ENV GHC_VERSION=$GHC_VERSION
 ARG REPO
 ENV REPO=$REPO
 
-WORKDIR /opt/$REPO
-
-RUN stack config set system-ghc --global true
-
-RUN stack update
-
-# Add just the files capturing dependencies
 COPY ./ghcid-stack.yaml $WORKDIR
-
 RUN stack --resolver ghc-$GHC_VERSION --no-terminal install ghcid --stack-yaml ghcid-stack.yaml
 
 COPY ./hlint-stack.yaml $WORKDIR
-
 RUN stack --resolver ghc-$GHC_VERSION --no-terminal install hlint --stack-yaml hlint-stack.yaml
 
 CMD ["stack", "exec", "ghcid"]
