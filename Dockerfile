@@ -19,21 +19,19 @@ WORKDIR /opt/$REPO
 RUN ulimit -n 8192
 
 # Add just the files capturing dependencies
-COPY ./yst.cabal      $WORKDIR
-COPY ./stack.yaml     $WORKDIR
+COPY ./yst.cabal  $WORKDIR
+COPY ./stack.yaml $WORKDIR
 
 # Docker will cache this command as a layer, freeing us up to
 # modify source code without re-installing dependencies
 # (unless the .cabal file changes!)
-RUN stack --resolver ghc-$GHC_VERSION --no-terminal $ARGS test --only-dependencies --fast
+RUN stack --resolver ghc-$GHC_VERSION --no-terminal test --only-dependencies --fast
 
 # Add and Install Application Code
 COPY . $WORKDIR
 RUN stack  --resolver ghc-$GHC_VERSION --no-terminal --local-bin-path $WORKDIR/bin \
-           $ARGS test --haddock --no-haddock-deps --ghc-options="-O0 -Wall -fno-warn-unused-do-bind"
+           test --haddock --no-haddock-deps --ghc-options="-O0 -Wall -fno-warn-unused-do-bind"
 
-RUN apt-get update && apt-get install -y locales
-
-RUN locale-gen --purge en_US.UTF-8  
-
-RUN  echo -e 'LANG="en_US.UTF-8"\nLANGUAGE="en_US:en"\n' > /etc/default/locale
+RUN apt-get update && apt-get install -y locales && locale-gen --purge en_US.UTF-8
+ENV LANG     en_US.UTF-8
+ENV LANGUAGE en_US:en
