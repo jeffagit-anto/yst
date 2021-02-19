@@ -1,6 +1,8 @@
 resolver:
  url: ghc-8.8.4
 
+allow-newer: true
+
 # User packages to be built.
 # Various formats can be used as shown in the example below.
 packages:
@@ -33,6 +35,7 @@ extra-deps:
  - base16-bytestring-0.1.1.7@sha256:8cbba2505d4da4f6cfc90cd36c8e8ad0c09c056538481ea00e8b10b78f70cb10,2153
  - base64-bytestring-1.0.0.3@sha256:6c82d900465345e30ff0eeb9a1374fbd2955c8e5ca6206e03669f04575830f88,2242
  - basement-0.0.11@sha256:af43e2e334e515b52ca309919b135c51b5e9411e6d4c68d0e8950d61eb5f25d1,5711
+ - bifunctors-5.5.10@sha256:52ae8b959de7bb2d5ec38750b9bc2782c90b5bf48805d635eb6ac0cfeb5b1bd6,3738
  - blaze-builder-0.4.1.0@sha256:fa992674ea28f6ea6569d93388d757aef928af1e2f0ce80a35c29fb782252a2d,3542
  - blaze-html-0.9.1.2@sha256:5cd99ebdbf18e096f548f49ccabad0ec1338a1e7dd5165ab304b25e2efb1cb54,2936
  - blaze-markup-0.8.2.7@sha256:66a4a250ef6597e3d147256ee3f3123d3b4848f2d2494f676ec293267e286f63,2276
