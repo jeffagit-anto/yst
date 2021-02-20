@@ -132,13 +132,13 @@ renderPage site page = do
     case sourceFile page of
           SourceFile sf   -> liftM (filter (/='\r')) $ searchPath srcDirs sf >>= readFile
           TemplateFile tf -> do
-            templ <- getTemplate tf g
+            templ <- Yst.Render.getTemplate tf g
             return $ render
                     . setManyAttrib attrs
                     . setAttribute "root" root'
                     . setAttribute "gendate" todaysDate
                     $ templ
-  layoutTempl <- getTemplate layout g
+  layoutTempl <- Yst.Render.getTemplate layout g
   let format = formatFromExtension (stripStExt layout)
   contents <- converterForFormat format (T.pack rawContents)
   return $ render
