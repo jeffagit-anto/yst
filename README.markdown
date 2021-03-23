@@ -3,6 +3,16 @@
 
 [![Build Status](https://travis-ci.com/jeffagit-anto/yst.svg?branch=master)](https://travis-ci.com/jeffagit-anto/yst)
 
+My 2 cents
+----------
+fork then...
+
+ - add 2 Dockerfiles to build [a prod Docker Image](https://hub.docker.com/layers/137481093/antojf/yst/latest/images/sha256-6925635e701e6e95550f5c8b1c8c3147f6dcee4dd07492ab91f72b158761dd5e?context=explore) and a [dev Docker Image](https://hub.docker.com/layers/antojf/yst-dev/latest/images/sha256-d30529323852c9cb9d3565d126c816a09106a1084f3983b3c01dbe371679a678), both sharing the same base code
+ - Add some [CI sorcery](https://github.com/jeffagit-anto/yst/blob/master/.travis.yml) to keeps things updated.
+Yes, I have some very good reasons to use Travis
+
+WIP : externalize theses files in a special repo ; make it easy to inject them on the fly, even without forking 
+
 `yst` is a tool for generating a static website by filling [string
 template][]s with data taken from [YAML][] or [CSV][] text files or
 [SQLite3][] file based databases. This approach
