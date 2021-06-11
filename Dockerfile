@@ -35,3 +35,4 @@ RUN stack  --resolver ghc-$GHC_VERSION --no-terminal --local-bin-path $WORKDIR/b
 RUN apt-get update && apt-get install -y locales && locale-gen --purge en_US.UTF-8
 ENV LANG     en_US.UTF-8
 ENV LANGUAGE en_US:en
+ENV LC_ALL   C.UTF-8
