@@ -1,0 +1,13 @@
+[x] create markdown ? rst ? custom styles ? from docx
+stack exec -- pandoc --extract-media=images <yourDocxFile> -f docx+styles -t markdown -o layout.txt.st
+
+[x] manage media/images
+
+[] make reverse transform to docx and compare docx
+
+[] make custom reference file - try with ref doc first
+see reference links in https://pandoc.org/MANUAL.html#custom-styles
+modify custom reference file (only styles)
+add --reference-dox at docx writer options
+
+
